@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "Per Container Extension control",
+  "version": "1.0",
+
+  "description": "Control which extensions are allowed to run in a given container.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.*"],
+      "js": ["contxtcon.js"]
+    }
+  ]
+
+}
