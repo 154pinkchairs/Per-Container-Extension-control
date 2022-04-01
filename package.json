@@ -1,0 +1,32 @@
+{
+  "name": "per-container-addon-control",
+  "version": "0.1.0",
+  "description": "A firefox addon that allows you to (dis)allow extensions for each container, similar to how you can do this with private windows.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./src && web-ext lint --source-dir ./src",
+    "build": "cd src && web-ext build --overwrite-dest",
+    "package": "rm -rf src/web-ext-artifacts && npm run build && mv src/web-ext-artifacts/per_container-addon-control-*.zip addon.xpi",
+    "dev": "web-ext run --source-dir ./src",
+    "dev:tc": "web-ext run --source-dir ./src -p TemporaryContainers"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/154pinkchairs/Per-Container-Addon-control.git"
+  },
+  "keywords": [
+    "firefox",
+    "addon",
+    "policy",
+    "control",
+    "containers",
+    "container",
+    "tab",
+    "privacy"
+  ],
+  "author": "Marcelina Hołub",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/154pinkchairs/Per-Container-Addon-control/issues"
+  },
+  "homepage": "https://github.com/154pinkchairs/Per-Container-Addon-control#readme",
