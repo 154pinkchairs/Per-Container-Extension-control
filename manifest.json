@@ -1,14 +1,41 @@
 {
 
   "manifest_version": 2,
-  "name": "Per Container Extension control",
-  "version": "1.0",
+  "name": "Per Container Add-On control",
+  "version": "0.1",
 
   "description": "Control which extensions are allowed to run in a given container.",
+  "default_locale": "en",
 
-  "icons": {
-    "48": "icons/border-48.png"
+"applications": {
+    "gecko": {
+      "id": "ovehis@riseup.net",
+      "strict_min_version": "91.1.0"
+    }
   },
+
+   "browser_action": {
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true,
+    "browser_style": false
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "contextualIdentities",
+    "cookies",
+    "proxy"
+  ],
+
 
   "content_scripts": [
     {
@@ -16,5 +43,11 @@
       "js": ["contxtcon.js"]
     }
   ]
+  
+  "background": {
+    "scripts": [
+      "background/index.js"
+    ]
+  }
 
 }
